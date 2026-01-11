@@ -8,12 +8,13 @@ dotenv.config();
 console.log(process.env.MONGO_URI);
 
 const app = express();
+const PORT = process.env.PORT || 5001;
 
 connectDB();
 
 app.use('/api/notes', notesRoutes);
 
 app.listen(5001, () => {
-	console.log('Server Started on PORT: 5001');
+	console.log('Server Started on PORT:', PORT);
 	process.exit(1); // exit with failure
 });
