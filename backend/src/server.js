@@ -11,8 +11,6 @@ console.log(process.env.MONGO_URI);
 const app = express();
 const PORT = process.env.PORT || 5001;
 
-connectDB();
-
 // Middleware
 app.use(express.json()); // This middleware will parese JSON bodies: req.body
 app.use(rateLimiter);
@@ -24,6 +22,8 @@ app.use(rateLimiter);
 
 app.use('/api/notes', notesRoutes);
 
-app.listen(5001, () => {
-	console.log('Server Started on PORT:', PORT);
+connectDB().then(() => {
+	app.listen(5001, () => {
+		console.log('Server Started on PORT:', PORT);
+	});
 });
