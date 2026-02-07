@@ -13,6 +13,7 @@ const CreatePage = () => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+
 		if (!title || !content) {
 			toast.error('Please fill in all fields');
 			return;
@@ -25,7 +26,14 @@ const CreatePage = () => {
 			navigate('/');
 		} catch (error) {
 			console.error('Error creating note:', error);
-			toast.error('Failed to create note');
+			if (error.response.status === 429) {
+				toast.error('Slow Down. You are creating notes too fast.', {
+					duration: 4000,
+					icon: '💀',
+				});
+			} else {
+				toast.error('Failed to create note');
+			}
 		} finally {
 			setLoading(false);
 		}
