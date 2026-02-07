@@ -7,7 +7,9 @@ import toast from 'react-hot-toast';
 
 const App = () => {
 	return (
-		<div>
+		<div data-theme="forest">
+			<button className="btn btn-primary">Info</button>
+			<button className="btn btn-success">Success</button>
 			<Routes>
 				<Route path="/" element={<HomePage />} />
 				<Route path="/create" element={<CreatePage />} />
