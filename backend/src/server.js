@@ -14,12 +14,12 @@ const PORT = process.env.PORT || 5001;
 
 // Middleware
 app.use(express.json()); // This middleware will parese JSON bodies: req.body
-app.use(rateLimiter);
 app.use(
 	cors({
 		origin: 'http://localhost:5173', // Allow requests from this origin
 	}),
 );
+app.use(rateLimiter);
 // Our simple custom middleware
 // app.use((req, res, next) => {
 // 	console.log(`Req method is ${req.method} & Req URL is ${req.url}`);
