@@ -17,8 +17,7 @@ const __dirname = path.resolve();
 if (process.env.NODE_ENV !== 'production') {
 	app.use(
 		cors({
-			origin: 'http://localhost:5173',
-         "https://thinkboard-pink-five.vercel.app/"
+			origin: ['http://localhost:5173', 'https://thinkboard-pink-five.vercel.app/', credentials: true],
 		}),
 	);
 }
