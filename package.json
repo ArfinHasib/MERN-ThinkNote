@@ -1,15 +1,13 @@
 {
-  "name": "note-taking-app",
+  "name": "mern-thinkboard",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
     "start": "npm run start --prefix backend"
   },
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/ArfinHasib/MERN-ThinkNote/issues"
-  },
-  "homepage": "https://github.com/ArfinHasib/MERN-ThinkNote#readme"
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
